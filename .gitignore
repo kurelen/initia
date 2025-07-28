@@ -1,0 +1,18 @@
+# Build outputs
+target/
+docs/
+public/
+
+# cache
+.clerk/
+.cpcache
+
+# REPL/Editor
+.nrepl-port
+.calva/
+.lsp/
+.clj-kondo/.cache/
+
+# OS
+.DS_Store
+Thumbs.db
