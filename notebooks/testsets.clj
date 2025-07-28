@@ -9,14 +9,16 @@
 ;; Das zweite Testset besteht aus 100 Initien aus dem Altbestand
 
 
-(ns notebooks.index
+(ns notebooks.testsets
   {:nextjournal.clerk/visibility {:code :hide}}
   (:require
     [nextjournal.clerk :as clerk]))
 
+
 ;; ## Testset 1
 
 (clerk/md "...to continue")
+
 
 ;; ## Testset 2
 
