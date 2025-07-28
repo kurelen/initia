@@ -12,14 +12,22 @@
 (ns notebooks.testsets
   {:nextjournal.clerk/visibility {:code :hide}}
   (:require
+    [initia.data :as data]
     [nextjournal.clerk :as clerk]))
 
 
 ;; ## Testset 1
 
-(clerk/md "...to continue")
+^{::clerk/visibility {:result :show}}
+(clerk/table
+  {:head ["Index" "Initium"]
+   :rows (map-indexed
+           (fn [idx text] [idx text]) data/testset-1)})
 
 
 ;; ## Testset 2
 
-(clerk/md "...to continue")
+^{::clerk/visibility {:result :show}}
+(clerk/table
+  {:head ["Index" "Initium"]
+   :rows (map-indexed (fn [idx text] [idx text]) data/testset-2)})
