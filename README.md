@@ -1,5 +1,5 @@
 # Initia
 
-Analyse von Initien
+Automatische Ähnlichkeitsberechnungen als Grundlage für die Gruppierung
+mittelalterlicher Textanfänge.
 
-Beschreibung folgt
