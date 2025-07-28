@@ -1,5 +1,11 @@
 # 📜 Initia
 
+[![Tests](https://github.com/kurelen/initia/workflows/Run%20tests/badge.svg)](https://github.com/kurelen/initia/actions)
+[![Documentation](https://github.com/kurelen/initia/workflows/Build%20and%20Deploy%20Docs/badge.svg)](https://kurelen.github.io/initia/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Clojure](https://img.shields.io/badge/Clojure-1.12.1-blue.svg)](https://clojure.org/)
+[![Digital Humanities](https://img.shields.io/badge/Digital-Humanities-purple.svg)](#)
+
 Initia ist ein Forschungswerkzeug zur computergestützten Analyse 
 mittelalterlicher Textanfänge (Initien). Das Projekt nutzt Textmetriken 
 und untersucht speziell den gewichteten Levenshtein Algorithmus, mit 
