@@ -1,14 +1,21 @@
 ;; # Initia
 ;; 
-;; Welcome to the Initia project documentation!
+;; 
+;; Initia ist ein Forschungswerkzeug zur computergestützten Analyse 
+;; mittelalterlicher Textanfänge (Initien). Das Projekt nutzt Textmetriken 
+;; und untersucht speziell den gewichteten Levenshtein Algorithmus, mit 
+;; Gewichtung auf mittelalterlicher deutscher sowie lateinischer Sprache. 
+;; Diese Metrix wird mit generischen Metriken anhand einer Beispielmenge an 
+;; Gruppen von Initien verglichen.
 ;;
-;; This project combines a command-line tool with interactive notebooks
-;; to demonstrate string similarity and matrix operations.
 
 (ns notebooks.index
   {:nextjournal.clerk/visibility {:code :hide}}
   (:require
     [nextjournal.clerk :as clerk]))
 
+;; Notebooks
+;;
+;; - [Testsets](testsets.clj)
 
 (clerk/md "...to continue")
