@@ -34,7 +34,10 @@ jobs:
           restore-keys: clj-deps-
 
       - name: Build Clerk notebooks
-        run: clojure -M:clerk
+        run: make clerk
+
+      - name: Create .nojekyll file
+        run: touch docs/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
