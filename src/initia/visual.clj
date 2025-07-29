@@ -1,12 +1,12 @@
 (ns initia.visual
   (:require
-    [initia.matrix :as matrix]
     [clojure.core.matrix :as m]
+    [initia.matrix :as matrix]
     [nextjournal.clerk :as clerk]))
 
 
 (defn matrix-heatmap
-  "Erstellt eine Heatmap-Visualisierung einer Matrix."
+  "Visualise a symmetric matrix as a heat-map"
   [matrix labels & {:keys [max-size width domain] :or {max-size 50 width 600}}]
   (let [n (min (m/row-count matrix) max-size)
         stats (matrix/matrix-stats matrix)
@@ -40,3 +40,18 @@
                   :tooltip [{:field "label-x" :title "Initium X"}
                             {:field "label-y" :title "Initium Y"}
                             {:field "value" :title "Ähnlichkeit" :format ".3f"}]}})))
+
+
+(defn matrix-stats-table
+  "Display the stats of several matrizes"
+  [matrices labels]
+  (clerk/table
+    (map
+      (fn [m l]
+        (let [stats (matrix/matrix-stats m)]
+          {:Label l
+           :Min (format "%.3f" (:min stats))
+           :Max (format "%.3f" (:max stats))
+           :Mittelwert (format "%.3f" (:mean stats))}))
+      matrices
+      labels)))

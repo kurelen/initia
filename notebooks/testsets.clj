@@ -1,12 +1,10 @@
 ;; # Testsets
 ;; 
+;; [← Zurück zur Übersicht](index.html)
+;; 
 ;; Für die Analyse stehen uns zwei Testsets an Initien zur Verfügung.
 ;; 
-;; Das erste Testset besteht aus 11 Initien aus dem Altbestand sowie 
-;; 39 Initien, welche mit bestimmten Mutationen aus den ersten Initien
-;; generiert wurden. 
 ;; 
-;; Das zweite Testset besteht aus 100 Initien aus dem Altbestand
 
 
 (ns notebooks.testsets
@@ -17,17 +15,26 @@
 
 
 ;; ## Testset 1
+;; 
+;; Das erste Testset besteht aus 11 Initien aus dem Altbestand sowie 
+;; 39 Initien, welche mit bestimmten Mutationen aus den ersten Initien
+;; generiert wurden. 
 
 ^{::clerk/visibility {:result :show}}
 (clerk/table
+  {::clerk/page-size nil}
   {:head ["Index" "Initium"]
    :rows (map-indexed
            (fn [idx text] [idx text]) data/testset-1)})
 
 
 ;; ## Testset 2
+;; 
+;; Das zweite Testset besteht aus 100 Initien aus dem Altbestand des
+;; Handschriftenportals.
 
 ^{::clerk/visibility {:result :show}}
 (clerk/table
+  {::clerk/page-size nil}
   {:head ["Index" "Initium"]
    :rows (map-indexed (fn [idx text] [idx text]) data/testset-2)})
