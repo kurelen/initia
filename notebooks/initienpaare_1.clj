@@ -11,9 +11,8 @@
 
 ;; ## Sortierte Ähnlichkeit mit Darstellung der Gruppen
 
+
 (pairwise-table
   testset-1
   medieval-sim
-  :gruppe
-  :initium
-  #(str "Gruppe " (:gruppe %) " • " (:kategorie %)))
+  :label #(str "Gruppe " (:gruppe %) " • " (:kategorie %)))

@@ -1,9 +1,6 @@
 ;; # Testsets
 ;; 
-;; [← Zurück zur Übersicht](index.html)
-;; 
 ;; Für die Analyse stehen uns zwei Testsets an Initien zur Verfügung.
-;; 
 ;; 
 
 

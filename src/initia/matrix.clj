@@ -106,3 +106,17 @@
     (if (zero? range)
       matrix
       (m/div (m/sub matrix min-val) range))))
+
+
+(defn extract-submatrix
+  "Extrahiert Submatrix mit gegebenen Zeilen- und Spaltenindizes"
+  [matrix indices]
+  (let [indices (sort indices)]
+    (m/select matrix indices indices)))
+
+
+(defn extract-subvector
+  "Extrahiert Submatrix mit gegebenen Zeilen- und Spaltenindizes"
+  [v indices]
+  (let [indices (sort indices)]
+    (mapv #(nth v %) indices)))

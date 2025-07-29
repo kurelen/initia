@@ -1,4 +1,4 @@
-;; # Initienpaare auf Testset 1
+;; # Initienpaare auf Testset 2
 ;; 
 
 (ns notebooks.initienpaare-2
@@ -14,6 +14,4 @@
 (pairwise-table
   testset-2
   medieval-sim
-  :gruppe
-  :initium
-  #(str "Gruppe " (:gruppe %)))
+  :label #(str "Gruppe " (:gruppe %)))
