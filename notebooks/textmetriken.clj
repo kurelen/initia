@@ -7,6 +7,7 @@
 (ns notebooks.textmetriken
   {:nextjournal.clerk/visibility {:code :hide}}
   (:require
+    [clojure.core.matrix :as m]
     [initia.data :as data]
     [initia.matrix :as matrix]
     [initia.text-metric :as metric]
@@ -130,7 +131,6 @@
   results
   label)
 
-
 ;; ### Statistiken
 ;;
 ;; Die Ähnlichkeitsmatritzen haben folgende Statistiken:
@@ -152,3 +152,31 @@
         metric/damerau-dist
         metric/medieval-dist])
   label)
+
+;; ### Differenz zwischen Levenshtein und gewichtetem Levenshtein
+;;
+;; Die von uns definierten Kosten machen alle Substitutionen günstiger. Es
+;; ist aber nicht klar, ob dies dabei hilft, die einzelnen Gruppen besser
+;; zu unterscheiden. Daher Visualisieren wir hier die Differenz zwischen den
+;; Ähnlichkeitsmatrizen von Levenshtein zu dem gewichteten Levenshtein:
+
+^{:nextjournal.clerk/visibility {:result :hide :code :show}}
+(def difference 
+  (m/sub (matrix/symmetric metric/medieval-sim initien)
+         (matrix/symmetric metric/levenshtein-sim initien)))
+
+;; Auf der absoluten Scala von $[0, 1]$ sieht die Differenz als Hitzekarte so aus: 
+
+^{:nextjournal.clerk/visibility {:result :show :code :hide}}
+(visual/matrix-heatmap
+  difference
+  initien
+  :domain [0 1])
+
+;; Relativ sehen die Unterschiede aber so aus:
+
+^{:nextjournal.clerk/visibility {:result :show :code :hide}}
+(visual/matrix-heatmap
+  difference
+  initien)
+
