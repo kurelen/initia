@@ -17,3 +17,7 @@
 
 (def testset-2
   (load-edn-resource "fixtures/testset-2.edn"))
+
+
+(def weights
+  (load-edn-resource "weights.edn"))
