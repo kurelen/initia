@@ -9,15 +9,15 @@
 Initia ist ein Forschungswerkzeug zur computergestützten Analyse 
 mittelalterlicher Textanfänge (Initien). Das Projekt nutzt Textmetriken 
 und untersucht speziell den gewichteten Levenshtein Algorithmus, mit 
-Gewichtung auf mittelalterlicher deutscher sowie lateinischer Sprache. 
-Diese Metrix wird mit generischen Metriken anhand einer Beispielmenge an 
+angepasster Gewichtung für mittelalterliche deutsche Schreibsprachen. 
+Diese Metrik wird mit generischen Metriken anhand einer Beispielmenge an 
 Gruppen von Initien verglichen.
 
 ## 👥 Mitwirkende
 
-- **Nicole Eichenberger** (Stiftung Preußischer Kulturbesitz)
-- **Magdalena Luniak** (Stiftung Preußischer Kulturbesitz)
-- **Alexander Jandt** (Stiftung Preußischer Kulturbesitz)
+- **Nicole Eichenberger** (Staatsbibliothek zu Berlin - Stiftung Preußischer Kulturbesitz)
+- **Magdalena Luniak** (Staatsbibliothek zu Berlin - Stiftung Preußischer Kulturbesitz)
+- **Alexander Jandt** (Staatsbibliothek zu Berlin - Stiftung Preußischer Kulturbesitz)
 
 ## 📊 Dokumentation der Ergebnisse
 
