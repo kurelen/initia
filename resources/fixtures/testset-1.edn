@@ -1,239 +1,239 @@
 [{:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Ausgangsform"
+  :kategorie "Ausgangsform"
   :initium "O du honigfliessender herre Jesu süsse und lustlichen … ich bitte dich demütiklichen"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Länge"
+  :kategorie "Abweichungskategorie: Unterschiedliche Länge"
   :initium "O du honigfliessender herre Jesu süsse und lustlichen … ich bitte dich"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Länge"
+  :kategorie "Abweichungskategorie: Unterschiedliche Länge"
   :initium "O du honigfliessender herre Jesu süsse und lustlichen … ich bitte"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Länge"
+  :kategorie "Abweichungskategorie: Unterschiedliche Länge"
   :initium "O du honigfliessender herre Jesu süsse"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Vertauschte Wortreihenfolge"
+  :kategorie "Abweichungskategorie: Vertauschte Wortreihenfolge"
   :initium "O du honigfliessender herre Jesu lustlichen und süsse … ich bitte dich demütiklichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Vertauschte Wortreihenfolge"
+  :kategorie "Abweichungskategorie: Vertauschte Wortreihenfolge"
   :initium "O du honigfliessender herre Jesu süsse und lustlichen … demütiklichen bitte ich dich"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
+  :kategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
   :initium "O herre Jesu süsse und lustlichen … ich bitte dich demütiklichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
+  :kategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
   :initium "O du honigfliessender milder herre Jesu süsse und lustlichen … ich bitte dich demütiklichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
+  :kategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
   :initium "O du honigfliessender milder Jesu süsse und lustlichen … ich bitte dich demütiklichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
+  :kategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
   :initium "O du honigfliessender herre Jesu Criste … ich bitte dich inniklichen und demütiklichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
+  :kategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
   :initium "O du honigfliessender herre Jesu … ich bitte dich demütiklichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Graphien"
+  :kategorie "Abweichungskategorie: Unterschiedliche Graphien"
   :initium "O du honecvliezender here Ihesu süeze und lustlichen … ich bitte dich diemüeteclichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Graphien"
+  :kategorie "Abweichungskategorie: Unterschiedliche Graphien"
   :initium "O du honigfliessender herr Jesu süsse und lustlich … ich bit dich demütiklich"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Graphien"
+  :kategorie "Abweichungskategorie: Unterschiedliche Graphien"
   :initium "O du honigflúßiger herre Jesu sússe und lústlichen … ich pitte dich demuotiklich"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Graphien"
+  :kategorie "Abweichungskategorie: Unterschiedliche Graphien"
   :initium "O du hönigfließender her Jhesu suoze vnd lüstleichen … ich pit dich demuotigleichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Graphien"
+  :kategorie "Abweichungskategorie: Unterschiedliche Graphien"
   :initium "O du honigfliessender herre Iesu süsse und lustlichen … ich bitte dich demütiklichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
+  :kategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
   :initium "O du honicvliessender herre Jhesu lustlichen … ich bitte dich demütiklich"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
+  :kategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
   :initium "O honigfliessender herre Jesu süeze und lüstlichen … ich bitte dich demütiklichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
+  :kategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
   :initium "O du honigfliezzender herr Jhesu … ich pitte dich demüetigleichen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 1
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
+  :kategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
   :initium "O honigfliessender herr Ihesu lustlichen und süesse … demütiklichen bitte ich dich"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Ausgangsform"
+  :kategorie "Ausgangsform"
   :initium "Freuw dich du allererlichste gottes gebererin alle zyt jungfrauw Maria das du von deinem allerliebsten son … bist uffgenumen"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Länge"
+  :kategorie "Abweichungskategorie: Unterschiedliche Länge"
   :initium "Frew dich du allererlichste gottes gebererin alle zyt jungfraw Maria das du von deinem allerliebsten son"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Länge"
+  :kategorie "Abweichungskategorie: Unterschiedliche Länge"
   :initium "Freuw dich du allererlichste gottes gebererin alle zyt jungfrauw Maria"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Länge"
+  :kategorie "Abweichungskategorie: Unterschiedliche Länge"
   :initium "Freuw dich du allererlichste gottes gebererin alle zyt jungfrauw Maria das du von deinem allerliebsten son … bist"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Vertauschte Wortreihenfolge"
+  :kategorie "Abweichungskategorie: Vertauschte Wortreihenfolge"
   :initium "Freuw dich du allererlichste gottes gebererin alle zyt jungfrauw Maria das du von deinem allerliebsten son … uffgenumen bist"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Vertauschte Wortreihenfolge"
+  :kategorie "Abweichungskategorie: Vertauschte Wortreihenfolge"
   :initium "Freuw dich du allererlichste gottes gebererin Maria alle zyt jungfrauw das du von deinem allerliebsten son … bist uffgenumen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
+  :kategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
   :initium "Freuw dich allererlichste gottes gebererin alle zyt jungfrauw Maria das du von deinem son … bist uffgenumen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
+  :kategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
   :initium "Freuw dich du allererlichste frauwe gottes gebererin alle zyt jungfrauw Maria das du von deinem allerliebsten einigen son … bist uffgenumen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
+  :kategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
   :initium "Freuw dich du allererlichste gottes gebererin Maria das du von deinem allerliebsten son … bist uffgenumen in den himel"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
+  :kategorie "Abweichungskategorie: Weggelassene/zusätzliche Wörter"
   :initium "Freuw dich du allererlichste gottes gebererin jungfrauw Maria das du von deinem son … bist uffgenumen worden"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Graphien"
+  :kategorie "Abweichungskategorie: Unterschiedliche Graphien"
   :initium "vröuwe dich du allererlichste gotes gebererin alle zit iuncvrouwe Maria daz du von dinem allerliebsten sun … bist ufgenumen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Graphien"
+  :kategorie "Abweichungskategorie: Unterschiedliche Graphien"
   :initium "Freue dich du allererleichste gottes gepererin alle zeyt jungfrauw Maria das du von deinem allerliepsten son … pist auffgenumen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Graphien"
+  :kategorie "Abweichungskategorie: Unterschiedliche Graphien"
   :initium "Freuw dich du allererlichoste gottes gebererin alle zeyt jungfrauw Maria das du von deinem allerliebsten sone … bist auffgenumen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 2
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Unterschiedliche Graphien"
+  :kategorie "Abweichungskategorie: Unterschiedliche Graphien"
   :initium "vreuw dich du allererlichste gottes gebererin alle zeit jungkfrauwe Maria dasz du von deinem allerliebesten son … bist uffgenumen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 3
-  :ausgangsform-bzw-abweichungskategorie "Ausgangsform"
+  :kategorie "Ausgangsform"
   :initium "O du allerwürdigeste usserwelleste gottes gebererin … Maria ich armer sunder vermane dich des grossen schmertzen und hertzlichen leyds mit dem dein zarts junckfröliches müetterlichs gethrüwes hertz verwundt ward"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 3
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
+  :kategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
   :initium "O du allerwirdigste auserwelteste gottes gebererin … Maria ich arme sünderin vermane dich des grossen smertzen vnd herzleichen leids"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 3
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
+  :kategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
   :initium "O du wirdigste uzerwelteste gotes gebererin … Maria ich armer sunder vermane dich des grozen smerzen und herzlichen leids mit dem din zartes juncvröwliches müeterliches getriuwes herz verwunt wart"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 3
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
+  :kategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
   :initium "O allerwürdigste gottes gebererin … Maria ich vermane dich des grossen schmertzen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 3
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
+  :kategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
   :initium "O du allererlichste gottes gebererin … jungfrauwe Maria ich armer sunder vermane dich des grossen schmertzen"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 3
-  :ausgangsform-bzw-abweichungskategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
+  :kategorie "Abweichungskategorie: Kombination verschiedener Abweichungen"
   :initium "O allerwirdigoste uzerwelte gotes gebererin … Maria ich armer sünder verman dich des herzeleyds mit dem din zart jungfrowliches muoterliches herz"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 4
   :initium "Der heilig sant Eustachius der hieß vor dem tauff Placidus"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 4
   :initium "Der heilig sant Eustachius der hiess vor der tauff Placitus"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 4
   :initium "Der heilig rittermaister sand Eustachius der hies vor seiner tauff"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 4
   :initium "Eustachius de was vore genomet Placidus"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 4
   :initium "Eustachius heisch eirst werff Placidus ind was eyn marschalck van dem heer des keysers Trayanus"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 4
   :initium "Eustachius was ein heiden und ee er getouft ward"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 4
   :initium "Der hailig sand Eustachius der was vor dem tawf genennet Placidus"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 4
   :initium "Sant Eustachius der was vor sinem touf geheizen Placidus"
-  :herkunft-des-initiums "neu erstellt"}
+  :herkunft "neu erstellt"}
  
  {:gruppe 5
   :initium "Maria die muter gotes als sant Bernhardus spricht erkenet"
-  :herkunft-des-initiums "Altdatenbestand"}
+  :herkunft "Altdatenbestand"}
  
  {:gruppe 6
   :initium "Sint daz ein gerichte werden sal daz wirt von dren personen"
-  :herkunft-des-initiums "Altdatenbestand"}]
+  :herkunft "Altdatenbestand"}]
