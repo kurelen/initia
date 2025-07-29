@@ -23,9 +23,7 @@
 ^{::clerk/visibility {:result :show}}
 (clerk/table
   {::clerk/page-size nil}
-  {:head ["Index" "Initium"]
-   :rows (map-indexed
-           (fn [idx text] [idx text]) data/testset-1)})
+  data/testset-1)
 
 
 ;; ## Testset 2
@@ -36,5 +34,4 @@
 ^{::clerk/visibility {:result :show}}
 (clerk/table
   {::clerk/page-size nil}
-  {:head ["Index" "Initium"]
-   :rows (map-indexed (fn [idx text] [idx text]) data/testset-2)})
+  data/testset-2)

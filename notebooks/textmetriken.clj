@@ -105,8 +105,12 @@
 
 
 ^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
+(def initien (map :initium data/testset-1))
+
+
+^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
 (def results
-  (map #(matrix/symmetric % data/testset-1)
+  (map #(matrix/symmetric % initien)
        [metric/ngram-sim
         metric/lcs-sim
         metric/cosine-sim
@@ -120,7 +124,7 @@
 (map
   (fn [m l]
     [(clerk/html [:h3 l])
-     (visual/matrix-heatmap m data/testset-1)])
+     (visual/matrix-heatmap m initien)])
   results
   label)
 
@@ -136,8 +140,7 @@
 ;; dementsprechend schlechtere Vergleichbarkeit
 
 (visual/matrix-stats-table
-  (map #(matrix/symmetric % data/testset-1)
-
+  (map #(matrix/symmetric % initien)
        [metric/ngram-dist
         metric/lcs-dist
         metric/cosine-dist
