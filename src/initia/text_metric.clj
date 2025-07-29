@@ -1,5 +1,6 @@
 (ns initia.text-metric
   (:require
+    [initia.character-costs :refer [medieval-costs]]
     [clojure.string :refer [lower-case trim]])
   (:import
     (info.debatty.java.stringsimilarity
@@ -208,6 +209,13 @@
             max-dist (upperbound (count s1) (count s2))]
         (if (zero? max-dist) 1.0 (- 1.0 (/ dist max-dist)))))))
 
+;; Weighted Levenshtein with substitution costs for medieval scriptures
+
+(def medieval-dist
+  (weighted-levenshtein-dist-fn medieval-costs))
+
+(def medieval-sim
+  (weighted-levenshtein-sim-fn medieval-costs))
 
 ;; Utility functions
 

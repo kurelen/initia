@@ -36,11 +36,11 @@
 
 (deftest test-cost-fn
   (testing "Pre-configured cost function for medieval scriptures"
-    (is (map? costs/medieval-cost-fn))
-    (is (contains? costs/medieval-cost-fn :substitute))
-    (is (fn? (:substitute costs/medieval-cost-fn)))
+    (is (map? costs/medieval-costs))
+    (is (contains? costs/medieval-costs :substitute))
+    (is (fn? (:substitute costs/medieval-costs)))
 
-    (let [cost-fn (:substitute costs/medieval-cost-fn)]
+    (let [cost-fn (:substitute costs/medieval-costs)]
       ;; Test some known medieval character variations
       (is (= 0.0 (cost-fn "ä" "e"))) ; common medieval variation
       (is (= 0.0 (cost-fn "b" "p"))) ; common confusion in manuscripts
@@ -71,7 +71,7 @@
 
 (deftest test-cost-function-properties
   (testing "Properties of the cost function"
-    (let [cost-fn (:substitute costs/medieval-cost-fn)]
+    (let [cost-fn (:substitute costs/medieval-costs)]
 
       ;; Symmetry: cost(a,b) = cost(b,a)
       (is (= (cost-fn "a" "o") (cost-fn "o" "a")))

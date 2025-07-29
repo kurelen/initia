@@ -16,7 +16,7 @@
                   1.0)))))
 
 
-(def medieval-cost-fn
+(def medieval-costs
   "Pre-configured character substitution costs for medieval manuscripts."
   {:substitute
    (create-substitution-cost-fn

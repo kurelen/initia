@@ -101,7 +101,8 @@
    "Jaccard"
    "Jaro-Winkler"
    "Levenshtein"
-   "Damerau"])
+   "Damerau"
+   "Gewichteter Levenshtein"])
 
 
 ^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
@@ -117,7 +118,8 @@
         metric/jaccard-sim
         metric/jaro-winkler-sim
         metric/levenshtein-sim
-        metric/damerau-sim]))
+        metric/damerau-sim
+        metric/medieval-sim]))
 
 
 ^{:nextjournal.clerk/visibility {:result :show :code :hide}}
@@ -147,5 +149,6 @@
         metric/jaccard-dist
         metric/jaro-winkler-dist
         metric/levenshtein-dist
-        metric/damerau-dist])
+        metric/damerau-dist
+        metric/medieval-dist])
   label)
