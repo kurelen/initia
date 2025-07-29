@@ -101,9 +101,25 @@
 
 
 (defn pairwise-table
-  "Display pairwise comparison of text distance"
-  [data sim-fn group-fn value-fn label-fn]
-  (let [results (similarity-pairs data sim-fn value-fn)]
+  "Display pairwise similarity comparison as a color-coded table.
+  
+  Computes similarities between all pairs of entries and displays them
+  sorted by similarity (highest first) with color-coded backgrounds
+  based on group membership.
+  
+  Arguments:
+    data    - Collection of entries to compare
+    sim-fn  - Similarity function (takes two values, returns 0-1)
+    
+  Options:
+    :value  - Function to extract comparable value from entry (default: :initium)
+    :group  - Function to extract group identifier for color coding (default: :gruppe)  
+    :label  - Function to extract display label for entry (default: :gruppe)"
+  [data sim-fn & {:keys [value group label]
+                  :or {value :initium
+                       group :gruppe
+                       label :gruppe}}]
+  (let [results (similarity-pairs data sim-fn value)]
     (clerk/html
       [:div
        [:table {:style {:border-collapse "collapse" :width "100%" :font-size "14px"}}
@@ -114,20 +130,20 @@
           [:th {:style {:border "1px solid #ddd" :padding "8px" :width "45%"}} "Initium 2"]]]
         [:tbody
          (for [{:keys [similarity entry1 entry2]} results]
-           (let [color1 (group-color-rgb (group-fn entry1))
-                 color2 (group-color-rgb (group-fn entry2))]
+           (let [color1 (group-color-rgb (group entry1))
+                 color2 (group-color-rgb (group entry2))]
              [:tr
               [:td {:style {:border "1px solid #ddd" :padding "8px" :text-align "center" :font-weight "bold"}}
                (format "%.3f" similarity)]
               [:td {:style {:border "1px solid #ddd" :padding "8px" :background-color color1}}
                [:div
                 [:div {:style {:font-weight "bold" :margin-bottom "4px"}}
-                 (label-fn entry1)]
+                 (label entry1)]
                 [:div {:style {:font-size "12px"}}
-                 (value-fn entry1)]]]
+                 (value entry1)]]]
               [:td {:style {:border "1px solid #ddd" :padding "8px" :background-color color2}}
                [:div
                 [:div {:style {:font-weight "bold" :margin-bottom "4px"}}
-                 (label-fn entry2)]
+                 (label entry2)]
                 [:div {:style {:font-size "12px"}}
-                 (value-fn entry2)]]]]))]]])))
+                 (value entry2)]]]]))]]])))

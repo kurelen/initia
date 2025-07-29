@@ -131,6 +131,7 @@
   results
   label)
 
+
 ;; ### Statistiken
 ;;
 ;; Die Ähnlichkeitsmatritzen haben folgende Statistiken:
@@ -153,6 +154,7 @@
         metric/medieval-dist])
   label)
 
+
 ;; ### Differenz zwischen Levenshtein und gewichtetem Levenshtein
 ;;
 ;; Die von uns definierten Kosten machen alle Substitutionen günstiger. Es
@@ -161,9 +163,10 @@
 ;; Ähnlichkeitsmatrizen von Levenshtein zu dem gewichteten Levenshtein:
 
 ^{:nextjournal.clerk/visibility {:result :hide :code :show}}
-(def difference 
+(def difference
   (m/sub (matrix/symmetric metric/medieval-sim initien)
          (matrix/symmetric metric/levenshtein-sim initien)))
+
 
 ;; Auf der absoluten Scala von $[0, 1]$ sieht die Differenz als Hitzekarte so aus: 
 
@@ -173,10 +176,10 @@
   initien
   :domain [0 1])
 
+
 ;; Relativ sehen die Unterschiede aber so aus:
 
 ^{:nextjournal.clerk/visibility {:result :show :code :hide}}
 (visual/matrix-heatmap
   difference
   initien)
-
