@@ -45,9 +45,13 @@
 ;;
 ;; Das Testset 1 mit generierten Daten zeigt folgende Hitzekarte:
 
+^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
+(def matrix-1 (matrix/symmetric metric/medieval-sim initien-1))
+
+
 ^{:nextjournal.clerk/visibility {:result :show :code :hide}}
 (visual/matrix-heatmap
-  (matrix/symmetric metric/medieval-sim initien-1)
+  matrix-1
   initien-1)
 
 
@@ -62,8 +66,61 @@
   :max-size 100)
 
 
-;; ## Differenz zwischen Levenshtein und gewichtetem Levenshtein
-;;
+;; ## Inhaltliche Analyse der Kategorien von Testset 1
+;; 
+
+^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
+(def gruppen-indices
+  (let [groups (->> data/testset-1
+                    (map-indexed vector)
+                    (group-by (comp (juxt :gruppe :kategorie) second))
+                    (mapv (fn [[key indices]]
+                            {:gruppe-kategorie key
+                             :indices (mapv first indices)})))
+
+        ausgangsform-lookup (->> groups
+                                 (filter #(= "Ausgangsform" (second (:gruppe-kategorie %))))
+                                 (into {} (map #(vector (first (:gruppe-kategorie %))
+                                                        (first (:indices %))))))]
+    (->> groups
+         (remove #(or (= "Ausgangsform" (second (:gruppe-kategorie %)))
+                      (= 1 (count (:indices %)))))
+         (mapv #(cond-> %
+                  (contains? ausgangsform-lookup (first (:gruppe-kategorie %)))
+                  (update :indices conj (get ausgangsform-lookup (first (:gruppe-kategorie %)))))))))
+
+
+^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
+(def submatrices
+  (mapv
+    (fn [{:keys [gruppe-kategorie indices]}]
+      {:gruppe-kategorie gruppe-kategorie
+       :submatrix (matrix/extract-submatrix matrix-1 indices)
+       :initien (matrix/extract-subvector initien-1 indices)})
+    gruppen-indices))
+
+
+^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
+(defn gruppe-kategorie-label
+  [gruppe-kategorie]
+  (str "Gruppe: " (first gruppe-kategorie) ", Kategorie: " (second gruppe-kategorie)))
+
+
+^{:nextjournal.clerk/visibility {:result :show :code :hide}}
+(for [{:keys [gruppe-kategorie submatrix initien]} submatrices]
+  [(clerk/html [:h3 (gruppe-kategorie-label gruppe-kategorie)])
+   (visual/matrix-heatmap submatrix initien :width 100)])
+
+
+;; ### Statistiken
+
+(visual/matrix-stats-table
+  (mapv :submatrix submatrices)
+  (mapv #(gruppe-kategorie-label (:gruppe-kategorie %)) submatrices))
+
+
+;; ## Differenzen
+;; 
 ;; Die von uns definierten Kosten machen alle Substitutionen günstiger. Es
 ;; ist aber nicht klar, ob dies dabei hilft, die einzelnen Gruppen besser
 ;; zu unterscheiden. Daher Visualisieren wir hier die Differenz zwischen den
