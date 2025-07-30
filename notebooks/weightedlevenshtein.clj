@@ -46,12 +46,16 @@
 ;; Das Testset 1 mit generierten Daten zeigt folgende Hitzekarte:
 
 ^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
-(def matrix-1 (matrix/symmetric metric/medieval-sim initien-1))
+(def medieval-matrix (matrix/symmetric metric/medieval-sim initien-1))
+
+
+^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
+(def levenshtein-matrix (matrix/symmetric metric/levenshtein-sim initien-1))
 
 
 ^{:nextjournal.clerk/visibility {:result :show :code :hide}}
 (visual/matrix-heatmap
-  matrix-1
+  medieval-matrix
   initien-1)
 
 
@@ -91,11 +95,21 @@
 
 
 ^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
-(def submatrices
+(def medieval-submatrices
   (mapv
     (fn [{:keys [gruppe-kategorie indices]}]
       {:gruppe-kategorie gruppe-kategorie
-       :submatrix (matrix/extract-submatrix matrix-1 indices)
+       :submatrix (matrix/extract-submatrix medieval-matrix indices)
+       :initien (matrix/extract-subvector initien-1 indices)})
+    gruppen-indices))
+
+
+^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
+(def levenshtein-submatrices
+  (mapv
+    (fn [{:keys [gruppe-kategorie indices]}]
+      {:gruppe-kategorie gruppe-kategorie
+       :submatrix (matrix/extract-submatrix levenshtein-matrix indices)
        :initien (matrix/extract-subvector initien-1 indices)})
     gruppen-indices))
 
@@ -106,17 +120,42 @@
   (str "Gruppe: " (first gruppe-kategorie) ", Kategorie: " (second gruppe-kategorie)))
 
 
+^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
+(defn caption
+  [text]
+  (clerk/html [:figcaption.text-center.mt-1 text]))
+
+
 ^{:nextjournal.clerk/visibility {:result :show :code :hide}}
-(for [{:keys [gruppe-kategorie submatrix initien]} submatrices]
-  [(clerk/html [:h3 (gruppe-kategorie-label gruppe-kategorie)])
-   (visual/matrix-heatmap submatrix initien :width 100)])
+(for [idx (range (count medieval-submatrices))]
+  [(clerk/html [:h3 (gruppe-kategorie-label (:gruppe-kategorie (nth medieval-submatrices idx)))])
+   (clerk/row
+     (let [{:keys [submatrix initien]} (nth medieval-submatrices idx)]
+       (clerk/col
+         (visual/matrix-heatmap submatrix initien :width 100)
+         (caption "Gewichtete Levenshtein Ähnlichkeit")))
+     (let [{:keys [submatrix initien]} (nth levenshtein-submatrices idx)]
+       (clerk/col
+         (visual/matrix-heatmap submatrix initien :width 100)
+         (caption "Levenshtein Ähnlichkeit"))))])
 
 
 ;; ### Statistiken
+;;
+;; Für die Submatritzen mit der gewichteten Levenshtein Ähnlichkeit haben wir folgende
+;; Werte:
 
 (visual/matrix-stats-table
-  (mapv :submatrix submatrices)
-  (mapv #(gruppe-kategorie-label (:gruppe-kategorie %)) submatrices))
+  (mapv :submatrix medieval-submatrices)
+  (mapv #(gruppe-kategorie-label (:gruppe-kategorie %)) medieval-submatrices))
+
+
+;; Für die Submatritzen mit der Levenshtein Ähnlichkeit haben wir folgende
+;; Werte:
+
+(visual/matrix-stats-table
+  (mapv :submatrix levenshtein-submatrices)
+  (mapv #(gruppe-kategorie-label (:gruppe-kategorie %)) medieval-submatrices))
 
 
 ;; ## Differenzen
