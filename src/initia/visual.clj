@@ -77,7 +77,7 @@
        (sort-by :similarity >)))
 
 
-(defn group-color-rgb
+(defn- group-color-rgb
   "RGB-basierte Farbgenerierung mit besserer Unterscheidbarkeit"
   [group-number]
   (let [n (dec group-number)  ; 0-50 Range
@@ -150,7 +150,17 @@
                  (value entry2)]]]]))]]])))
 
 
-(defn initium-table
+(defn- extract-all-keys
+  "Extracts all unique keys from a collection of maps as a vector."
+  [data]
+  (->> data
+       (mapcat keys)
+       (into #{})
+       sort
+       vec))
+
+
+(defn data-table
   "Display pairwise similarity comparison as a color-coded table.
   
   Computes similarities between all pairs of entries and displays them
@@ -159,24 +169,21 @@
   
   Arguments:
     data    - Collection of entries to compare"
-  [data & {:keys [showRowNumber] :or {showRowNumber true}}]
-  (let [header (->> data
-                    (mapcat keys)
-                    (into #{})
-                    vec)]
+  [data & {:keys [show-row-numbers] :or {show-row-numbers true}}]
+  (let [header (extract-all-keys data)]
     (clerk/html
       [:div
        [:table {:style {:border-collapse "collapse" :width "100%" :font-size "14px"}}
         [:thead
          [:tr {:style {:background-color "#f8f9fa"}}
-          (when showRowNumber
+          (when show-row-numbers
             [:th {:style {:border "1px solid #ddd" :padding "8px"}} "#"])
           (for [heading header]
             [:th {:style {:border "1px solid #ddd" :padding "8px"}} (capitalize (name heading))])]]
         [:tbody
          (for [[idx entry] (map-indexed vector data)]
            [:tr
-            (when showRowNumber
+            (when show-row-numbers
               [:td
                {:style {:border "1px solid #ddd" :padding "8px" :text-align "left"}}
                (inc idx)])
