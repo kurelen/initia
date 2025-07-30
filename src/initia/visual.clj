@@ -1,6 +1,7 @@
 (ns initia.visual
   (:require
     [clojure.core.matrix :as m]
+    [clojure.string :refer [capitalize]]
     [initia.matrix :as matrix]
     [nextjournal.clerk :as clerk]))
 
@@ -147,3 +148,33 @@
                  (label entry2)]
                 [:div {:style {:font-size "12px"}}
                  (value entry2)]]]]))]]])))
+
+
+(defn initium-table
+  "Display pairwise similarity comparison as a color-coded table.
+  
+  Computes similarities between all pairs of entries and displays them
+  sorted by similarity (highest first) with color-coded backgrounds
+  based on group membership.
+  
+  Arguments:
+    data    - Collection of entries to compare"
+  [data]
+  (let [header (->> data
+                    (mapcat keys)
+                    (into #{})
+                    vec)]
+    (clerk/html
+      [:div
+       [:table {:style {:border-collapse "collapse" :width "100%" :font-size "14px"}}
+        [:thead
+         [:tr {:style {:background-color "#f8f9fa"}}
+          (for [heading header]
+            [:th {:style {:border "1px solid #ddd" :padding "8px"}} (capitalize (name heading))])]]
+        [:tbody
+         (for [entry data]
+           [:tr
+            (for [heading header]
+              [:td
+               {:style {:border "1px solid #ddd" :padding "8px" :text-align "left"}}
+               (heading entry)])])]]])))

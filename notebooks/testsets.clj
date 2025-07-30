@@ -8,7 +8,15 @@
   {:nextjournal.clerk/visibility {:code :hide}}
   (:require
     [initia.data :as data]
+    [initia.visual :as visual]
     [nextjournal.clerk :as clerk]))
+
+
+^{::clerk/visibility {:code :show :result :show}}
+(->> data/testset-1
+     (mapcat keys)
+     (into #{})
+     vec)
 
 
 ;; ## Testset 1
@@ -18,8 +26,7 @@
 ;; generiert wurden. 
 
 ^{::clerk/visibility {:result :show}}
-(clerk/table
-  data/testset-1)
+(visual/initium-table data/testset-1)
 
 
 ;; ## Testset 2
@@ -28,5 +35,4 @@
 ;; Handschriftenportals.
 
 ^{::clerk/visibility {:result :show}}
-(clerk/table
-  data/testset-2)
+(visual/initium-table data/testset-2)
