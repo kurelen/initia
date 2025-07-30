@@ -159,7 +159,7 @@
   
   Arguments:
     data    - Collection of entries to compare"
-  [data]
+  [data & {:keys [showRowNumber] :or {showRowNumber true}}]
   (let [header (->> data
                     (mapcat keys)
                     (into #{})
@@ -169,11 +169,17 @@
        [:table {:style {:border-collapse "collapse" :width "100%" :font-size "14px"}}
         [:thead
          [:tr {:style {:background-color "#f8f9fa"}}
+          (when showRowNumber
+            [:th {:style {:border "1px solid #ddd" :padding "8px"}} "#"])
           (for [heading header]
             [:th {:style {:border "1px solid #ddd" :padding "8px"}} (capitalize (name heading))])]]
         [:tbody
-         (for [entry data]
+         (for [[idx entry] (map-indexed vector data)]
            [:tr
+            (when showRowNumber
+              [:td
+               {:style {:border "1px solid #ddd" :padding "8px" :text-align "left"}}
+               (inc idx)])
             (for [heading header]
               [:td
                {:style {:border "1px solid #ddd" :padding "8px" :text-align "left"}}
