@@ -19,7 +19,6 @@
 
 ^{::clerk/visibility {:result :show}}
 (clerk/table
-  {::clerk/page-size nil}
   data/testset-1)
 
 
@@ -30,5 +29,4 @@
 
 ^{::clerk/visibility {:result :show}}
 (clerk/table
-  {::clerk/page-size nil}
   data/testset-2)
