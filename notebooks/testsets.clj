@@ -12,13 +12,6 @@
     [nextjournal.clerk :as clerk]))
 
 
-^{::clerk/visibility {:code :show :result :show}}
-(->> data/testset-1
-     (mapcat keys)
-     (into #{})
-     vec)
-
-
 ;; ## Testset 1
 ;; 
 ;; Das erste Testset besteht aus 11 Initien aus dem Altbestand sowie 
