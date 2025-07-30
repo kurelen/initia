@@ -19,7 +19,7 @@
 ;; generiert wurden. 
 
 ^{::clerk/visibility {:result :show}}
-(visual/initium-table data/testset-1)
+(visual/data-table data/testset-1)
 
 
 ;; ## Testset 2
@@ -28,4 +28,4 @@
 ;; Handschriftenportals.
 
 ^{::clerk/visibility {:result :show}}
-(visual/initium-table data/testset-2)
+(visual/data-table data/testset-2)
