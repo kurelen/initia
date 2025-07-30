@@ -150,16 +150,6 @@
                  (value entry2)]]]]))]]])))
 
 
-(defn- extract-all-keys
-  "Extracts all unique keys from a collection of maps as a vector."
-  [data]
-  (->> data
-       (mapcat keys)
-       (into #{})
-       sort
-       vec))
-
-
 (defn data-table
   "Display pairwise similarity comparison as a color-coded table.
   
@@ -168,26 +158,26 @@
   based on group membership.
   
   Arguments:
-    data    - Collection of entries to compare"
-  [data & {:keys [show-row-numbers] :or {show-row-numbers true}}]
-  (let [header (extract-all-keys data)]
-    (clerk/html
-      [:div
-       [:table {:style {:border-collapse "collapse" :width "100%" :font-size "14px"}}
-        [:thead
-         [:tr {:style {:background-color "#f8f9fa"}}
+    data    - Collection of entries to compare
+    header  - Collection of header keys"
+  [data header & {:keys [show-row-numbers] :or {show-row-numbers true}}]
+  (clerk/html
+    [:div
+     [:table {:style {:border-collapse "collapse" :width "100%" :font-size "14px"}}
+      [:thead
+       [:tr {:style {:background-color "#f8f9fa"}}
+        (when show-row-numbers
+          [:th {:style {:border "1px solid #ddd" :padding "8px"}} "#"])
+        (for [heading header]
+          [:th {:style {:border "1px solid #ddd" :padding "8px"}} (capitalize (name heading))])]]
+      [:tbody
+       (for [[idx entry] (map-indexed vector data)]
+         [:tr
           (when show-row-numbers
-            [:th {:style {:border "1px solid #ddd" :padding "8px"}} "#"])
+            [:td
+             {:style {:border "1px solid #ddd" :padding "8px" :text-align "left"}}
+             (inc idx)])
           (for [heading header]
-            [:th {:style {:border "1px solid #ddd" :padding "8px"}} (capitalize (name heading))])]]
-        [:tbody
-         (for [[idx entry] (map-indexed vector data)]
-           [:tr
-            (when show-row-numbers
-              [:td
-               {:style {:border "1px solid #ddd" :padding "8px" :text-align "left"}}
-               (inc idx)])
-            (for [heading header]
-              [:td
-               {:style {:border "1px solid #ddd" :padding "8px" :text-align "left"}}
-               (heading entry)])])]]])))
+            [:td
+             {:style {:border "1px solid #ddd" :padding "8px" :text-align "left"}}
+             (heading entry)])])]]]))
