@@ -59,8 +59,44 @@ make help  # Zeigt verfügbare Kommandos
 ```
 
 ### CLI-Tool verwenden
+
+Das CLI-Tool berechnet eine Matrix aller paarweisen Text-Ähnlichkeiten/-Distanzen für eine Liste von Initien.
+
+**Eingabe der Initien:**
+- **Interaktiv:** Initien direkt in der Kommandozeile eingeben (eine Leerzeile beendet die Eingabe)
+- **Datei:** Initien aus einer Textdatei laden über die Option `-i`, wobei jede Zeile einem Initium entspricht
+
+**Ausgabe:**
+- Standardmäßig wird das Ergebnis in der Kommandozeile angezeigt
+- Mit der Option `-o` kann das Ergebnis in eine Datei geschrieben werden
+
 ```bash
-make run -- --help
+Usage: clj -M:run [options]
+   or: java -jar initia.jar [options]
+
+Options:
+  -m, --metric METRIC  :medieval-sim  Similarity metric to use
+  -i, --input FILE                    Input file with initia
+  -o, --output FILE                   Output file for results
+  -v, --verbose                       Verbose output
+  -h, --help                          Show help
+
+Available metrics:
+  damerau-dist - Damerau distance
+  jaccard-dist - Jaccard distance
+  jaccard-sim - Jaccard similarity
+  cosine-dist - Cosine distance
+  jaro-winkler-dist - Jaro-Winkler distance
+  lcs-dist - LCS distance
+  medieval-dist - Medieval distance (weighted levenshtein)
+  lcs-sim - LCS similarity
+  cosine-sim - Cosine similarity
+  jaro-winkler-sim - Jaro-Winkler similarity
+  levenshtein-sim - Levenshtein similarity
+  levenshtein-dist - Levenshtein distance
+  medieval-sim - Medieval similarity (weighted levenshtein)
+  damerau-sim - Damerau similarity
+  ngram-sim - N-Gram similarity
 ```
 
 ### Notebooks lokal ansehen
