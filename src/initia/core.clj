@@ -55,7 +55,7 @@
 
 (defn usage
   [options-summary]
-  (->> ["Clustering tool for medieval initia"
+  (->> ["CLI tool for medieval initia"
         ""
         "Usage: clj -M:run [options]"
         "   or: java -jar initia.jar [options]"
