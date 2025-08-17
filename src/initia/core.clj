@@ -1,9 +1,10 @@
 (ns initia.core
   (:gen-class)
   (:require
-    [clojure.pprint :refer [pprint]]
+    [clojure.java.io :as io]
     [clojure.string :as str]
     [clojure.tools.cli :refer [parse-opts]]
+    [initia.matrix :as matrix]
     [initia.text-metric :as metric]))
 
 
@@ -89,14 +90,62 @@
       {:action :run :options options})))
 
 
+(defn read-input
+  "Read input from file or stdin"
+  [input-file verbose?]
+  (if input-file
+    (do
+      (when verbose?
+        (println (str "Reading from file: " input-file)))
+      (try
+        (with-open [reader (io/reader input-file)]
+          (vec (line-seq reader)))
+        (catch Exception e
+          (throw (ex-info (str "Failed to read input file: " input-file)
+                          {:file input-file :error (.getMessage e)})))))
+    (do
+      (when verbose?
+        (println "Reading from stdin (enter empty line to finish):"))
+      (loop [lines []]
+        (let [line (read-line)]
+          (if (or (nil? line) (str/blank? line))
+            lines
+            (recur (conj lines line))))))))
+
+
+(defn write-output
+  "Write output to file or stdout"
+  [content output-file verbose?]
+  (if output-file
+    (do
+      (when verbose?
+        (println (str "Writing to file: " output-file)))
+      (try
+        (spit output-file content)
+        (when verbose?
+          (println "Output written successfully"))
+        (catch Exception e
+          (throw (ex-info (str "Failed to write output file: " output-file)
+                          {:file output-file :error (.getMessage e)})))))
+    (do
+      (when verbose?
+        (println "Writing to stdout:"))
+      (println content))))
+
+
 (defn run-analysis
   "Run the analysis of the initia"
   [options]
   (try
-    (when (:verbose options)
-      (println "Verbose"))
-    (pprint options)
-    (System/exit 0)
+    (let [{:keys [input output metric verbose]} options
+          verbose? (boolean verbose)
+          metric-fn (get-metric metric)
+          initia (read-input input verbose?)
+
+          sim-matrix (matrix/symmetric metric-fn initia)
+          result (matrix/matrix->string sim-matrix {:precision 3})]
+      (write-output result output verbose?)
+      (System/exit 0))
     (catch Exception e
       (println (str "Error: " (.getMessage e)))
       (when (:verbose options)
@@ -112,6 +161,6 @@
       (do (println exit-message)
           (System/exit (if ok? 0 1)))
       (case action
-        :run (pprint options)
+        :run (run-analysis options)
         (do (println "Unknown action")
             (System/exit 1))))))

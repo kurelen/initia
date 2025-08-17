@@ -1,6 +1,7 @@
 (ns initia.matrix
   (:require
-    [clojure.core.matrix :as m]))
+    [clojure.core.matrix :as m]
+    [clojure.string :as str]))
 
 
 (m/set-current-implementation :vectorz)
@@ -77,8 +78,21 @@
      (dotimes [i rows]
        (when labels (print (format "%8s" (nth labels i))))
        (dotimes [j cols]
-         (print (format (str "%8" fmt-str) (m/mget matrix i j))))
+         (print (format fmt-str (m/mget matrix i j))))
        (println)))))
+
+
+(defn matrix->string
+  "Convert matrix to string with optional precision and separator"
+  [matrix {:keys [precision separator]
+           :or {precision 3 separator \tab}}]
+  (let [fmt-str (str "%." precision "f")
+        cell (fn [r c] (format fmt-str (m/mget matrix r c)))]
+    (->> (for [row (range (m/row-count matrix))]
+           (->> (for [col (range (m/column-count matrix))]
+                  (cell row col))
+                (str/join separator)))
+         (str/join \newline))))
 
 
 (defn matrix-stats
